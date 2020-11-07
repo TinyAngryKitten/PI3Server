@@ -1,0 +1,44 @@
+{
+    "bridge": {
+        "name": "Homebridge 7C12",
+        "username": "0E:C8:99:D9:7C:12",
+        "port": 52928,
+        "pin": "031-45-154"
+    },
+    "accessories": [
+        {
+            "type": "television",
+            "name": "TV",
+            "url": "http://10.0.0.96:1883",
+            "logMqtt": true,
+            "topics": {
+                "setActiveInput": "harmony/livingroom/LG TV",
+                "setActive": "harmony/livingroom/LG TV",
+                "setRemoteKey": "harmony/livingroom/LG TV"
+            },
+            "codec": "TVcodec.js",
+            "inputs": [
+                {
+                    "name": "Apple TV",
+                    "value": "InputHdmi3"
+                },
+                {
+                    "name": "PS4",
+                    "value": "InputHdmi1"
+                },
+                {
+                    "name": "Switch",
+                    "value": "InputHdmi4"
+                }
+            ],
+            "accessory": "mqttthing"
+        }
+    ],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8080,
+            "platform": "config"
+        }
+    ]
+}
